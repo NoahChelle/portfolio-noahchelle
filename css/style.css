@@ -1,0 +1,795 @@
+/* ========================================
+   IMPORT/CHARGEMENT DES POLICES ANTENNA .TTF
+   ======================================== */
+@font-face {
+    font-family: 'Antenna-Thin';
+    src: url('../fonts/Antenna-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Light';
+    src: url('../fonts/Antenna-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Regular';
+    src: url('../fonts/Antenna-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Medium';
+    src: url('../fonts/Antenna-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Bold';
+    src: url('../fonts/Antenna-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Black';
+    src: url('../fonts/Antenna-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antenna-Italic';
+    src: url('../fonts/Antenna-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ========================================
+   VARIABLES DE POLICES ET COULEURS
+   ======================================== */
+:root {
+    /* Polices Antenna */
+    --font-antenna-thin: 'Antenna-Thin', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-light: 'Antenna-Light', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-regular: 'Antenna-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-medium: 'Antenna-Medium', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-bold: 'Antenna-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-black: 'Antenna-Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-antenna-italic: 'Antenna-Italic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Couleurs */
+    --accent-primary: #40E0D0;
+    --accent-secondary: #9370DB;
+    --accent-tertiary: #FF6B9D;
+    --accent-yellow: #FFD93D;
+    --bg-dark: #0A0E1A;
+    --bg-darker: #060912;
+    --text-light: #EDEDED;
+    --text-muted: #B0B0B8;
+
+    --accent-primary-03: rgba(64, 224, 208, 0.03);
+    --accent-primary-05: rgba(64, 224, 208, 0.05);
+    --accent-primary-10: rgba(64, 224, 208, 0.1);
+    --accent-primary-20: rgba(64, 224, 208, 0.2);
+    --accent-primary-30: rgba(64, 224, 208, 0.3);
+    --accent-primary-40: rgba(64, 224, 208, 0.4);
+    --accent-primary-60: rgba(64, 224, 208, 0.6);
+
+    --accent-secondary-20: rgba(147, 112, 219, 0.2);
+    --accent-secondary-30: rgba(147, 112, 219, 0.3);
+
+    --bg-dark-alpha-95: rgba(10, 14, 26, 0.95);
+    --bg-dark-alpha-30: rgba(10, 14, 26, 0.3);
+
+    --white-alpha-03: rgba(255, 255, 255, 0.03);
+    --white-alpha-05: rgba(255, 255, 255, 0.05);
+    --white-alpha-10: rgba(255, 255, 255, 0.1);
+
+    --black-alpha-30: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   RÉINITIALISATION ET STYLES DE BASE
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-antenna-regular);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+    position: relative;
+}
+
+/* Effet de grain animé sur le body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(64, 224, 208, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(147, 112, 219, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 107, 157, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    33% {
+        opacity: 0.8;
+        transform: scale(1.1) rotate(5deg);
+    }
+    66% {
+        opacity: 0.9;
+        transform: scale(0.95) rotate(-5deg);
+    }
+}
+
+/* Effet de vignette */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(6, 9, 18, 0.4) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ========================================
+   NAVIGATION FUTURISTE
+   ======================================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(180deg, var(--bg-dark-alpha-95) 0%, rgba(10, 14, 26, 0.8) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    padding: 1.2rem 2rem;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(64, 224, 208, 0.05) 25%, 
+        rgba(147, 112, 219, 0.05) 50%, 
+        rgba(255, 107, 157, 0.05) 75%, 
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+nav:hover::before {
+    opacity: 1;
+}
+
+nav.scrolled {
+    padding: 0.8rem 2rem;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(64, 224, 208, 0.1);
+    background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark-alpha-95) 100%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-antenna-medium);
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+/* Effet de glow au survol */
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+nav a:hover::before {
+    width: 120px;
+    height: 120px;
+    opacity: 0.15;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent-primary);
+    text-shadow: 0 0 20px rgba(64, 224, 208, 0.5);
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    color: var(--accent-primary);
+    text-shadow: 0 0 15px rgba(64, 224, 208, 0.4);
+}
+
+.cv-btn {
+    font-family: var(--font-antenna-bold);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+    background-size: 200% 200%;
+    color: var(--bg-dark);
+    padding: 0.7rem 1.8rem;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);
+    animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.cv-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cv-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cv-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(64, 224, 208, 0.5),
+                0 0 40px rgba(147, 112, 219, 0.3);
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 2rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   TYPOGRAPHIE MODERNE
+   ======================================== */
+h1, .section-title {
+    font-family: var(--font-antenna-bold);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2, h3, .slogan {
+    font-family: var(--font-antenna-medium);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientMove 4s ease infinite;
+    filter: drop-shadow(0 0 30px rgba(64, 224, 208, 0.3));
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.bio p, .project-content p, .timeline-content p, .contact-info p {
+    font-family: var(--font-antenna-light);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Section Title avec effet néon */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-primary);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-shadow: 
+        0 0 10px rgba(64, 224, 208, 0.5),
+        0 0 20px rgba(64, 224, 208, 0.3),
+        0 0 30px rgba(64, 224, 208, 0.2);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(64, 224, 208, 0.6);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+    border-radius: 2px;
+    filter: blur(8px);
+    opacity: 0.6;
+}
+
+/* ========================================
+   ANIMATIONS DE BASE
+   ======================================== */
+.fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 10px 40px var(--accent-primary-30),
+                    0 0 20px var(--accent-primary-20);
+    }
+    50% {
+        box-shadow: 0 10px 60px var(--accent-primary-60),
+                    0 0 40px var(--accent-primary-40);
+    }
+}
+
+/* ========================================
+   BOUTONS FUTURISTES
+   ======================================== */
+.btn {
+    font-family: var(--font-antenna-medium);
+    font-weight: 600;
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-primary);
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--accent-primary);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.2),
+                inset 0 0 20px rgba(64, 224, 208, 0.1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn:hover {
+    color: var(--bg-dark);
+    border-color: var(--accent-secondary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(64, 224, 208, 0.4),
+                0 0 40px rgba(147, 112, 219, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   BOUTON DE LANGUE
+   ======================================== */
+.lang-btn {
+    font-family: var(--font-antenna-medium);
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(64, 224, 208, 0.1), rgba(147, 112, 219, 0.1));
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(64, 224, 208, 0.2);
+}
+
+.lang-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.lang-btn:hover::before {
+    left: 100%;
+}
+
+.lang-btn:hover {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--bg-dark);
+    border-color: var(--accent-secondary);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 5px 25px rgba(64, 224, 208, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 80px 1rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    nav a, .cv-btn, .lang-btn, .btn {
+        font-size: 0.9rem;
+    }
+    
+    .bio p, .project-content p, .timeline-content p, .contact-info p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 1rem;
+    }
+    
+    nav ul {
+        gap: 0.8rem;
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 70px 1rem 1rem;
+    }
+    
+    .cv-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   ÉLÉMENTS DE FORMULAIRE
+   ======================================== */
+input, textarea, select {
+    font-family: var(--font-antenna-regular);
+    font-weight: 400;
+}
+
+label {
+    font-family: var(--font-antenna-medium);
+    font-weight: 500;
+}
+
+/* ========================================
+   ÉTATS SPÉCIAUX
+   ======================================== */
+.nav-link.active {
+    font-family: var(--font-antenna-bold);
+    font-weight: 700;
+}
+
+/* Amélioration de la lisibilité */
+p {
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.02em;
+}
+
+/* ========================================
+   CHARGEMENT PROGRESSIF DES POLICES
+   ======================================== */
+.fonts-loading body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fonts-loaded body {
+    font-family: var(--font-antenna-regular);
+}
+
+/* ========================================
+   STYLES SPÉCIFIQUES POUR LA PAGE D'ACCUEIL
+   ======================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 0 0 auto;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 10px 40px var(--accent-primary-30);
+}
+
+/* ========================================
+   ANIMATIONS DE DÉLAI POUR LES ÉLÉMENTS
+   ======================================== */
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.3s; }
+.fade-in:nth-child(3) { animation-delay: 0.5s; }
+.fade-in:nth-child(4) { animation-delay: 0.7s; }
+.fade-in:nth-child(5) { animation-delay: 0.9s; }
+.fade-in:nth-child(6) { animation-delay: 1.1s; }
+
+/* ========================================
+   AMÉLIORATIONS VISUELLES
+   ======================================== */
+::selection {
+    background: var(--accent-primary-30);
+    color: var(--text-light);
+}
+
+::-moz-selection {
+    background: var(--accent-primary-30);
+    color: var(--text-light);
+}
+
+/* Scrollbar personnalisée futuriste */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+    border-left: 1px solid rgba(64, 224, 208, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 6px;
+    border: 2px solid var(--bg-darker);
+    box-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-secondary), var(--accent-tertiary));
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.7);
+}
+
+/* ========================================
+   FOOTER MODERNE
+   ======================================== */
+.site-footer {
+    background: linear-gradient(180deg, transparent, var(--bg-darker));
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.5);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    font-family: var(--font-antenna-light);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 1rem 0;
+        margin-top: 3rem;
+    }
+    
+    .footer-content {
+        padding: 0 1rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+}

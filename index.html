@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Noah Chelle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link active" data-translate="nav.home">Accueil</a></li>
+            <li><a href="projects.html" class="nav-link" data-translate="nav.projects">Projets</a></li>
+            <li><a href="skills.html" class="nav-link" data-translate="nav.skills">Compétences & Expériences</a></li>
+            <li><a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a></li>
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+            <li><a href="docs/CV_Noah_Chelle_FR.pdf" class="cv-btn" data-translate="nav.downloadCV" download>Télécharger CV</a></li>        </ul>
+    </nav>
+
+    <!-- Page Accueil -->
+    <div class="container">
+        
+        <!-- Bloc 1 : Titre à GAUCHE + Texte à DROITE -->
+        <div class="content-row fade-in">
+            <div class="title-block">
+                <h1 data-translate="home.title">Noah Chelle</h1>
+                <p class="slogan" data-translate="home.subtitle">Étudiant en Multimédia</p>
+            </div>
+            <div class="text-block">
+                <p data-translate="home.bio1">
+                    Je m'appelle <span class="highlight">Noah Chelle</span>, j'ai <span class="highlight">20 ans</span> et je viens d'<span class="highlight">Orthez</span>, dans le sud de la France. Je suis actuellement étudiant en <span class="highlight">troisième année</span> de Bachelor Universitaire de Technologie en <span class="highlight">Métiers du Multimédia et de l'Internet (BUT MMI)</span> à l'IUT de Tarbes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bloc 2 : Texte à GAUCHE + Photo à DROITE -->
+        <div class="content-row reverse fade-in">
+            <div class="text-block">
+                <p data-translate="home.bio2">
+                    Au fil de mes études, j'ai eu l'occasion de découvrir de nombreux domaines liés à la <span class="highlight">communication</span>, au <span class="highlight">design</span> et au <span class="highlight">développement web</span>. Ce que j'apprécie particulièrement dans cette formation, c'est la <span class="highlight">diversité des outils et des compétences</span>. Cette polyvalence me motive à explorer différents savoir-faire comme le <span class="highlight">graphisme</span>, le <span class="highlight">jeu vidéo</span> ou l'<span class="highlight">audiovisuel</span>.
+                </p>
+            </div>
+            <div class="image-block">
+                <img src="images/moi.jpg" alt="Photo de profil" class="avatar pulse">
+            </div>
+        </div>
+
+        <!-- Bloc 3 : Character à GAUCHE + Texte à DROITE -->
+        <div class="content-row fade-in">
+            <div class="image-block">
+                <img src="images/character.png" alt="Character" class="character-img">
+            </div>
+            <div class="text-block">
+                <p data-translate="home.bio3">
+                    En 2ème année je me suis spécialisé en <span class="highlight">développement web et dispositifs interactifs</span>. J'ai pu découvrir de nouveaux domaines comme le <span class="highlight">game design</span>, la <span class="highlight">modélisation 3D</span> ou même la <span class="highlight">réalité virtuelle</span>. Je suis quelqu'un de <span class="highlight">calme</span>, <span class="highlight">gentil</span> et <span class="highlight">créatif</span>. J'aime donner vie à des projets, qu'ils soient personnels ou collectifs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bloc 4 : Texte à GAUCHE + Bouton à DROITE -->
+        <div class="content-row reverse fade-in">
+            <div class="text-block">
+                <p data-translate="home.bio4">
+                    En dehors de mes études, je pratique le <span class="highlight">volley-ball,</span> un sport qui m'a appris la <span class="highlight">rigueur</span> et l'<span class="highlight">esprit d'équipe</span>. Je suis également passionné par les <span class="highlight">jeux vidéo</span>, le <span class="highlight">cinéma</span> et les <span class="highlight">mangas</span>. Dans l'avenir j'aimerais continuer à exprimer ma <span class="highlight">créativité</span> par la <span class="highlight">création numérique</span>.
+                </p>
+            </div>
+            <div class="cta-block">
+                <a href="projects.html" class="projects-btn" data-translate="home.seeProjects">
+                    <span>Voir mes projets</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Noah Chelle - <span data-translate="footer.legal">Portfolio personnel. Tous droits réservés.</span></p>
+        </div>
+    </footer>
+</body>
+</html>

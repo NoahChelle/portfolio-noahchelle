@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Bag Festival - Portfolio Noah Chelle</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="nav-link" data-translate="nav.home">Accueil</a></li>
+            <li><a href="../projects.html" class="nav-link" data-translate="nav.projects">Projets</a></li>
+            <li><a href="../skills.html" class="nav-link" data-translate="nav.skills">Compétences & Expériences</a></li>
+            <li><a href="../contact.html" class="nav-link" data-translate="nav.contact">Contact</a></li>
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+            <li><a href="docs/CV_Noah_Chelle_FR.pdf" class="cv-btn" data-translate="nav.downloadCV" download>Télécharger CV</a></li>        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="../projects.html" class="back-btn" data-translate="projects.back">← Retour aux projets</a>
+        
+        <div class="project-detail active">
+            <div class="detail-header">
+                <h2 class="detail-title" data-translate="projects.bigbag">Big Bag Festival</h2>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-left">
+                    <div class="detail-section">
+                        <h3 data-translate="projects.about">À propos du projet</h3>
+                        <p class="detail-description" data-translate="bigbag.description">
+                            Conception d'une affiche interactive pour le Big Bag Festival, un événement musical et artistique. Le projet repose sur l'intégration d'un QR Code dans une affiche au design minimaliste et vectoriel réalisé sous Illustrator. Lorsque l'utilisateur scanne le QR Code, il déclenche une animation dynamique (réalisée avec JavaScript) qui donne vie aux éléments graphiques de l'affiche, combinant ainsi le design print traditionnel avec une expérience digitale moderne.
+                        </p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Illustrator</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-right">
+                    <div class="media-gallery">
+                        <img src="../images/affiche.png" alt="Big Bag Festival - Affiche interactive">
+                    </div>
+                </div>
+            </div>
+
+            <div class="secondary-gallery">
+                <div class="secondary-images">
+                    <div class="secondary-image-item">
+                        <img src="../images/bigbag/bigbag1.png" alt="Banana Run - Image 6">
+                    </div>                
+                </div>
+            </div>
+
+            <div class="detail-actions">
+                <a href="https://noah-chelle.itch.io/big-bag-festival" target="_blank" class="btn btn-demo" data-translate="projects.view">Voir sur Itch.io</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-lightbox" id="project-lightbox">
+        <div class="project-lightbox-content">
+            <button class="project-lightbox-close" id="project-lightbox-close">&times;</button>
+            <img id="project-lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/projects.js"></script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Noah Chelle - <span data-translate="footer.legal">Portfolio personnel. Tous droits réservés.</span></p>
+        </div>
+    </footer>
+</body>
+</html>
