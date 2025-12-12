@@ -1,0 +1,11 @@
+# Fichiers et dossiers généraux à ignorer
+.DS_Store        # Fichiers macOS
+Thumbs.db        # Fichiers Windows
+*.log            # Fichiers log
+
+# Fichiers générés par Node/NPM (si vous en utilisez)
+/node_modules
+
+# Fichiers binaires et médias volumineux
+# C'est la ligne qui vous intéresse le plus pour les videos :
+images/*.mp4
