@@ -1,518 +1,405 @@
-/* Page Projets MODERNE */
+/* ========================================
+   PROJECTS CSS - STYLE ÉDITORIAL / BRUTALISTE
+   Gère la liste des projets ET les pages de détails
+   ======================================== */
+
+/* ========================================
+   1. LISTE DES PROJETS (Page projects.html)
+   ======================================== */
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .project-card {
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.03), rgba(147, 112, 219, 0.03));
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    cursor: pointer;
-    opacity: 0;
-    animation: slideIn 0.6s ease forwards;
-    display: flex;
-    flex-direction: column;
-    height: 480px;
-    position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 25px;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-.project-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(64, 224, 208, 0.1), transparent);
-    transform: rotate(45deg);
-    transition: all 0.8s ease;
-    opacity: 0;
-}
-
-.project-card:hover::after {
-    left: 100%;
-    opacity: 1;
-}
-
-.project-image {
-    width: 100%;
-    height: 220px;
-    min-height: 220px;
-    max-height: 220px;
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.15), rgba(147, 112, 219, 0.15));
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.project-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(147, 112, 219, 0.2));
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 1;
-}
-
-.project-card:hover .project-image::before {
-    opacity: 1;
-}
-
-/* CORRECTION : Adaptation UNIQUEMENT des miniatures de la page projets */
-.projects-grid .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: brightness(0.9) contrast(1.1);
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.projects-grid .project-card:hover .project-image img {
-    transform: scale(1.08);
-    filter: brightness(1.05) contrast(1.1) saturate(1.1);
-    object-fit: contain;
-}
-
-.project-content {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-    gap: 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
-}
-
-.project-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0;
-    background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
-    transition: height 0.5s ease;
-    box-shadow: 0 0 15px rgba(64, 224, 208, 0.6);
-}
-
-.project-card:hover .project-content::before {
-    height: 100%;
-}
-
-.project-content h3 {
-    color: var(--accent-primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    min-height: 3.2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 0.5fr;
+    gap: 2rem;
     align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 0 0 20px rgba(64, 224, 208, 0.3);
-    transition: all 0.4s ease;
-}
-
-.project-card:hover .project-content h3 {
-    color: var(--accent-secondary);
-    transform: translateX(5px);
-    text-shadow: 0 0 30px rgba(147, 112, 219, 0.5);
-}
-
-.project-content p {
-    color: var(--text-muted);
-    margin-bottom: 0;
-    flex: 1;
-    line-height: 1.6;
-    font-size: 1rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    max-height: calc(1.6em * 3);
-    text-overflow: ellipsis;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Important car c'est un lien */
+    opacity: 1;
+    animation: none;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 
-        0 20px 60px rgba(64, 224, 208, 0.3),
-        0 0 40px rgba(147, 112, 219, 0.2),
-        0 0 60px rgba(255, 107, 157, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Détails du projet - Nouvelle mise en page MODERNE */
-.back-btn {
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.1), rgba(147, 112, 219, 0.1));
-    color: var(--accent-primary);
-    border: 2px solid var(--accent-primary);
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
+/* Image miniature (Liste) */
+.project-image {
+    width: 100%;
+    height: 120px;
+    border-radius: 0;
     overflow: hidden;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    filter: grayscale(0%);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1);
+}
+
+/* Contenu (Liste) */
+.project-content {
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Nettoyage des anciens styles */
+.project-content::before, .project-card::before, .project-card::after { display: none; }
+
+.project-content h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--text-main);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    box-shadow: 0 0 20px rgba(64, 224, 208, 0.2);
+    font-weight: 400;
 }
 
-.back-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
+.project-content p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+}
+
+/* Bouton (Liste) */
+.project-card .btn {
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    background: var(--accent-primary);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-    z-index: -1;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.back-btn:hover::before {
-    width: 300px;
-    height: 300px;
+.project-card:hover .btn {
+    background: var(--accent);
+    color: var(--bg-color);
+    border-color: var(--accent);
+    transform: rotate(-45deg); /* Petite animation flèche */
 }
 
-.back-btn:hover {
-    color: var(--bg-dark);
-    border-color: var(--accent-secondary);
-    transform: translateX(-10px) scale(1.05);
-    box-shadow: 0 5px 30px rgba(64, 224, 208, 0.5);
-}
+
+/* ========================================
+   2. DÉTAILS DU PROJET (Pages individuelles)
+   ======================================== */
 
 .project-detail {
-    animation: fadeIn 0.6s ease;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; }
 }
 
-.detail-header {
+/* Bouton Retour minimaliste */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
     margin-bottom: 3rem;
+    transition: all 0.3s ease;
+    border: none;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.back-btn::before { display: none; } /* Enlève le rond ancien style */
+
+.back-btn:hover {
+    color: var(--accent);
+    transform: translateX(-5px);
+    box-shadow: none;
+    border: none;
+}
+
+/* Header du projet (Titre géant) */
+.detail-header {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
 }
 
 .detail-title {
-    font-size: 3rem;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0;
+    font-size: 4rem; /* Très gros */
+    color: var(--text-main);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 0 0 40px rgba(64, 224, 208, 0.3);
+    margin: 0;
+    line-height: 1;
+    background: none;
+    -webkit-text-fill-color: initial;
+    text-shadow: none;
 }
 
+/* Mise en page Grid (Gauche: Texte, Droite: Media) */
 .detail-content {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: start;
 }
 
-.detail-left {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-/* SUPPRESSION du rectangle de fond pour description et compétences */
+/* Colonne Texte */
 .detail-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0;
+    margin-bottom: 3rem;
     background: transparent;
-    backdrop-filter: none;
+    padding: 0;
     border: none;
     box-shadow: none;
-    transition: none;
-}
-
-.detail-section:hover {
-    border-color: transparent;
-    box-shadow: none;
-    transform: none;
 }
 
 .detail-section h3 {
-    color: var(--accent-primary);
-    font-size: 1.5rem;
-    margin: 0;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    text-shadow: 0 0 20px rgba(64, 224, 208, 0.3);
+    letter-spacing: 0.1em;
+    font-family: var(--font-body);
+    font-weight: 600;
 }
 
 .detail-description {
     color: var(--text-muted);
-    line-height: 1.8;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
 }
 
+/* Tags Techniques (Style "Label") */
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.5rem;
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.15), rgba(147, 112, 219, 0.15));
-    color: var(--accent-primary);
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    border: 2px solid var(--accent-primary);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    background: transparent;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace; /* Look code */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 15px rgba(64, 224, 208, 0.2);
+    border-radius: 0; /* Carré */
+    transition: all 0.3s ease;
+    box-shadow: none;
 }
 
 .tech-tag:hover {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    color: var(--bg-dark);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 5px 25px rgba(64, 224, 208, 0.5);
+    background: var(--text-main);
+    color: var(--bg-color);
+    transform: none;
 }
 
-.detail-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
+/* Colonne Média (Image principale / Vidéo) */
 .media-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    position: relative;
+    width: 100%;
 }
 
-/* ✅ CORRECTION : Images media-gallery avec hauteur limitée */
-.media-gallery > img,
-.media-gallery > video {
+.media-gallery > img, 
+.media-gallery > video,
+.media-gallery > iframe {
     width: 100%;
     height: auto;
-    max-height: 600px;
-    object-fit: contain;
-    border-radius: 20px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    border: 2px solid rgba(64, 224, 208, 0.2);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    background: #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-.media-gallery > img:hover {
-    transform: scale(1.02);
-    border-color: var(--accent-primary);
-    box-shadow: 0 15px 60px rgba(64, 224, 208, 0.4);
-}
-
-/* NOUVELLE SECTION : Galerie d'images secondaires */
+/* Galerie Secondaire (Grid stricte) */
 .secondary-gallery {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid transparent;
-    border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+    border-top: 1px solid var(--border-color);
+    padding-top: 4rem;
+    margin-top: 4rem;
 }
 
 .secondary-images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
-/* ✅ CORRECTION 2 : Images secondaires avec z-index et pointeur corrigés */
 .secondary-image-item {
-    position: relative;
-    aspect-ratio: 1;
-    border-radius: 15px;
+    aspect-ratio: 16/9;
+    border: 1px solid var(--border-color);
     overflow: hidden;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(64, 224, 208, 0.2);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
 }
 
-.secondary-image-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.2), rgba(147, 112, 219, 0.2));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.secondary-image-item:hover::before {
-    opacity: 1;
-}
-
-.secondary-image-item:hover {
-    transform: translateY(-8px) scale(1.05);
-    border-color: var(--accent-primary);
-    box-shadow: 0 15px 40px rgba(64, 224, 208, 0.4);
-    z-index: 2;
-}
+/* Enlève les effets de l'ancien style */
+.secondary-image-item::before { display: none; }
 
 .secondary-image-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.secondary-image-item:hover {
+    border-color: var(--accent);
+    transform: none;
 }
 
 .secondary-image-item:hover img {
-    transform: scale(1.1);
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
-/* ✅ CORRECTION 3 : Lightbox optimisée avec z-index élevé */
+/* Actions (Boutons en bas) */
+.detail-actions {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-demo {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 1rem 3rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    animation: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-demo::before, .btn-demo::after { display: none; } /* Reset */
+
+.btn-demo:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(204, 255, 0, 0.2);
+}
+
+/* ========================================
+   LIGHTBOX (Style Brut)
+   ======================================== */
+/* ========================================
+   LIGHTBOX CORRIGÉE (Plein écran & Centrée)
+   ======================================== */
+
 .project-lightbox {
-    position: fixed;
+    position: fixed;          /* ESSENTIEL : Fixe l'élément par dessus tout */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 2rem;
+    background: rgba(0, 0, 0, 0.95); /* Fond très sombre */
+    backdrop-filter: blur(5px);      /* Flou artistique derrière */
+    display: none;                   /* Caché par défaut */
+    justify-content: center;         /* Centre horizontalement */
+    align-items: center;             /* Centre verticalement */
+    z-index: 10000;                  /* Au-dessus de tout (même la nav) */
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
 }
 
 .project-lightbox.active {
-    display: flex;
+    display: flex; /* Active le mode Flexbox pour centrer */
     opacity: 1;
 }
 
 .project-lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
     position: relative;
-    animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10000;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Animation d'ouverture fluide */
 }
 
 .project-lightbox-content img {
+    display: block;
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 90vh; /* L'image ne dépassera jamais la hauteur de l'écran */
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 15px;
-    box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.7),
-        0 0 50px rgba(64, 224, 208, 0.3);
-    border: 2px solid rgba(64, 224, 208, 0.3);
-    display: block;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .project-lightbox-close {
     position: absolute;
-    top: -50px;
-    right: 0;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    top: -50px;     /* Place la croix au-dessus de l'image */
+    right: -10px;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 3rem;
     border: none;
-    color: var(--bg-dark);
-    font-size: 2rem;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     line-height: 1;
-    border-radius: 10px;
-    font-weight: bold;
-    box-shadow: 0 5px 20px rgba(64, 224, 208, 0.5);
+    transition: all 0.3s ease;
     z-index: 10001;
 }
 
 .project-lightbox-close:hover {
-    transform: rotate(90deg) scale(1.2);
-    box-shadow: 0 8px 30px rgba(64, 224, 208, 0.7);
+    color: var(--accent);
+    transform: rotate(90deg);
 }
 
+/* Animation d'ouverture (Effet "Pop") */
 @keyframes zoomIn {
     from {
-        transform: scale(0.8);
+        transform: scale(0.9);
         opacity: 0;
     }
     to {
@@ -521,369 +408,231 @@
     }
 }
 
-.detail-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid transparent;
-    border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .project-lightbox-close {
+        top: -40px;
+        right: 0;
+        font-size: 2.5rem;
+    }
 }
 
-/* Boutons spécifiques */
-.btn-demo {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    color: var(--bg-dark);
-    border: none;
-    box-shadow: 0 5px 25px rgba(64, 224, 208, 0.4);
-}
-
-.btn-demo:hover {
-    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
-    transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 10px 40px rgba(147, 112, 219, 0.6);
-}
-
-/* GALERIE EN PLEINE LARGEUR - VERSION GÉOMÉTRIQUE MODERNE */
-.gallery-full-width {
-    margin-top: 4rem;
-}
-
-.gallery-card-geometric {
-    position: relative;
-    border: 2px solid rgba(64, 224, 208, 0.2);
-    background: linear-gradient(135deg, rgba(64, 224, 208, 0.03), rgba(147, 112, 219, 0.03));
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    overflow: hidden;
-    opacity: 0;
-    animation: slideIn 0.6s ease forwards;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-card-geometric::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 25px;
-    padding: 2px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary), var(--accent-yellow));
-    background-size: 300% 300%;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    animation: gradientMove 5s ease infinite;
-}
-
-.gallery-card-geometric:hover::before {
-    opacity: 1;
-}
-
-.gallery-card-geometric:hover {
-    border-color: var(--accent-primary);
-    transform: translateY(-8px);
-    box-shadow: 
-        0 20px 60px rgba(64, 224, 208, 0.3),
-        0 0 40px rgba(147, 112, 219, 0.2);
-}
-
-.gallery-content-geometric {
-    display: flex;
-    align-items: center;
-    padding: 3rem;
-    gap: 3rem;
-    position: relative;
-    z-index: 2;
-}
-
-.geometric-pattern {
-    flex: 0 0 140px;
-    position: relative;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.shape {
-    position: absolute;
-    border-radius: 10px;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.8;
-    box-shadow: 0 5px 20px rgba(64, 224, 208, 0.3);
-}
-
-.shape-1 {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--accent-primary), #8B5CF6);
-    top: 10px;
-    left: 10px;
-    transform: rotate(0deg);
-}
-
-.shape-2 {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--accent-secondary), #06B6D4);
-    bottom: 15px;
-    right: 15px;
-    transform: rotate(0deg);
-}
-
-.shape-3 {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(135deg, #10B981, #34D399);
-    top: 40px;
-    left: 40px;
-    transform: rotate(0deg);
-}
-
-.pattern-icon {
-    font-size: 2.5rem;
-    z-index: 2;
-    position: relative;
-    transition: all 0.5s ease;
-    filter: drop-shadow(0 0 20px rgba(64, 224, 208, 0.6));
-}
-
-.gallery-card-geometric:hover .shape-1 {
-    transform: rotate(180deg) scale(1.3);
-    opacity: 1;
-    box-shadow: 0 10px 40px rgba(64, 224, 208, 0.6);
-}
-
-.gallery-card-geometric:hover .shape-2 {
-    transform: rotate(-180deg) scale(1.2);
-    opacity: 1;
-    box-shadow: 0 10px 40px rgba(147, 112, 219, 0.6);
-}
-
-.gallery-card-geometric:hover .shape-3 {
-    transform: rotate(360deg) scale(1.4);
-    opacity: 1;
-    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.6);
-}
-
-.gallery-card-geometric:hover .pattern-icon {
-    transform: scale(1.2) rotate(15deg);
-}
-
-.gallery-info {
-    flex: 1;
-}
-
-.gallery-info h3 {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.8rem;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.gallery-info p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.btn-gallery {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-    background-size: 200% 200%;
-    color: var(--bg-dark);
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    box-shadow: 0 5px 25px rgba(64, 224, 208, 0.4);
-    animation: gradientMove 3s ease infinite;
-}
-
-.btn-gallery:hover {
-    transform: translateY(-5px) scale(1.08);
-    box-shadow: 0 10px 40px rgba(64, 224, 208, 0.6);
-}
-
-/* Animation de fond géométrique */
-.geometric-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(64, 224, 208, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(147, 112, 219, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 107, 157, 0.05) 0%, transparent 50%);
-    transition: opacity 0.6s ease;
-    z-index: 1;
-}
-
-.gallery-card-geometric:hover .geometric-background {
-    opacity: 1;
-}
-
+/* ========================================
+   RESPONSIVE (Mobile)
+   ======================================== */
 @media (max-width: 1024px) {
     .detail-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne */
         gap: 2rem;
+    }
+    
+    .detail-left {
+        order: 2; /* Texte en dessous */
     }
     
     .detail-right {
-        order: -1;
-    }
-    
-    .media-gallery > img,
-    .media-gallery > video {
-        max-height: 500px;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-card {
-        height: auto;
-        min-height: 420px;
-    }
-    
-    .project-image {
-        height: 200px;
-        min-height: 200px;
-        max-height: 200px;
-    }
-    
-    .project-content {
-        padding: 1.5rem;
-    }
-    
-    .project-content h3 {
-        font-size: 1.3rem;
-        min-height: 2.8rem;
+        order: 1; /* Média au dessus */
     }
     
     .detail-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
-    
-    .detail-actions {
-        flex-direction: column;
-    }
-    
-    .gallery-content-geometric {
-        flex-direction: column;
+
+    /* Adapter la liste projets aussi */
+    .project-card {
+        grid-template-columns: 1fr;
+        padding: 3rem 0;
         text-align: center;
-        gap: 2rem;
-        padding: 2rem;
     }
     
-    .geometric-pattern {
-        flex: none;
+    .project-image {
+        height: 250px;
     }
     
-    .secondary-images {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    
-    .project-lightbox {
-        padding: 1rem;
-    }
-    
-    .project-lightbox-close {
-        top: -40px;
-        font-size: 1.5rem;
-    }
-    
-    .project-lightbox-content img {
-        border-radius: 10px;
-    }
-    
-    .media-gallery > img,
-    .media-gallery > video {
-        max-height: 400px;
+    .project-card .btn {
+        margin: 1rem auto 0;
     }
 }
 
-@media (max-width: 480px) {
-    .project-card {
-        min-height: 400px;
-    }
-    
-    .project-content h3 {
-        font-size: 1.2rem;
-        min-height: 2.6rem;
-    }
-    
-    .secondary-images {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-content-geometric {
-        padding: 1.5rem;
-    }
-    
-    .gallery-info h3 {
-        font-size: 1.6rem;
-    }
-    
-    .gallery-info p {
-        font-size: 1rem;
-    }
-    
-    .geometric-pattern {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .shape-1 {
-        width: 40px;
-        height: 40px;
-        top: 5px;
-        left: 5px;
-    }
-    
-    .shape-2 {
-        width: 30px;
-        height: 30px;
-        bottom: 10px;
-        right: 10px;
-    }
-    
-    .shape-3 {
-        width: 25px;
-        height: 25px;
-        top: 35px;
-        left: 35px;
-    }
-    
-    .pattern-icon {
-        font-size: 2rem;
-    }
-    
-    .media-gallery > img,
-    .media-gallery > video {
-        max-height: 300px;
-    }
+/* ========================================
+   3. PERSONNALISATION DES UNIVERS (THÈMES)
+   ======================================== */
+
+/* --- BASE : Transition fluide des couleurs --- */
+body {
+    transition: background-color 0.8s ease, color 0.5s ease;
+}
+
+/* On utilise des variables pour écraser le style par défaut */
+.theme-proton, .theme-mario, .theme-balmo, .theme-banana, .theme-dance, .theme-bigbag {
+    --bg-color: #050505; /* Par défaut sombre */
+}
+
+/* ========================================
+   THÈME : PROTON NEUTRON (Magie, Néon, Violet)
+   ======================================== */
+.theme-proton {
+    --bg-color: #0a0112;      /* Violet très sombre */
+    --accent: #bd00ff;        /* Néon Violet */
+    --text-main: #f0e6ff;
+    --border-color: rgba(189, 0, 255, 0.3);
+}
+
+/* Ambiance visuelle (Particules magiques floues) */
+.theme-proton::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(120, 0, 255, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 200, 0.1), transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.theme-proton .detail-title {
+    text-shadow: 0 0 20px rgba(189, 0, 255, 0.6); /* Effet Glow */
+}
+
+
+/* ========================================
+   THÈME : MARIO KART (Vitesse, Rouge, Course)
+   ======================================== */
+.theme-mario {
+    --bg-color: #0f0202;      /* Rouge noirci */
+    --accent: #ff3333;        /* Rouge Ferrari */
+    --text-main: #fff0f0;
+    --border-color: rgba(255, 51, 51, 0.3);
+}
+
+/* Ambiance visuelle (Damier de course subtil) */
+.theme-mario::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 10px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.theme-mario .detail-title {
+    font-style: italic; /* Pour donner de la vitesse */
+    transform: skewX(-10deg);
+}
+
+
+/* ========================================
+   THÈME : BALMO (Nature, Eau, Sérénité)
+   ======================================== */
+.theme-balmo {
+    --bg-color: #031412;      /* Vert forêt profond */
+    --accent: #4fffd9;        /* Cyan Eau */
+    --text-main: #e0fffa;
+    --border-color: rgba(79, 255, 217, 0.2);
+}
+
+/* Ambiance visuelle (Lumière sous-marine / Forêt) */
+.theme-balmo::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(79, 255, 217, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* ========================================
+   THÈME : BANANA RUN (Jungle, Fun, Jaune)
+   ======================================== */
+.theme-banana {
+    --bg-color: #1a1500;      /* Marron/Jaune sombre */
+    --accent: #ffcc00;        /* Jaune Banane */
+    --text-main: #fffae0;
+    --border-color: rgba(255, 204, 0, 0.3);
+}
+
+/* Ambiance visuelle (Feuilles géantes abstraites) */
+.theme-banana::before {
+    content: "";
+    position: fixed;
+    top: -50%; right: -50%; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255, 204, 0, 0.08), transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* ========================================
+   THÈME : JUST DANCE (Nuit, Disco, Néon Bleu)
+   ======================================== */
+.theme-dance {
+    --bg-color: #02021a;      /* Bleu nuit profond */
+    --accent: #00d4ff;        /* Bleu Néon */
+    --text-main: #ffffff;
+    --border-color: rgba(0, 212, 255, 0.4);
+}
+
+.theme-dance::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        linear-gradient(90deg, rgba(255,0,128,0.05), rgba(0,212,255,0.05));
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ========================================
+   THÈME : BIG BAG FESTIVAL (Pop, Rose, Géométrique)
+   ======================================== */
+.theme-bigbag {
+    --bg-color: #0a0a0a;
+    --accent: #ff0099;        /* Rose Pop */
+    --text-main: #ffffff;
+    --border-color: rgba(255, 0, 153, 0.4);
+}
+
+/* Motif à pois géométrique */
+.theme-bigbag::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 0, 153, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px; /* Grille de points */
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* ========================================
+   AJUSTEMENTS GLOBAUX POUR LES THÈMES
+   ======================================== */
+
+/* Applique la couleur d'accent au bouton démo */
+.theme-proton .btn-demo, 
+.theme-mario .btn-demo,
+.theme-balmo .btn-demo,
+.theme-banana .btn-demo,
+.theme-dance .btn-demo,
+.theme-bigbag .btn-demo {
+    border-color: var(--accent);
+    color: var(--text-main);
+}
+
+.theme-proton .btn-demo:hover, 
+.theme-mario .btn-demo:hover,
+.theme-balmo .btn-demo:hover,
+.theme-banana .btn-demo:hover,
+.theme-dance .btn-demo:hover,
+.theme-bigbag .btn-demo:hover {
+    background-color: var(--accent);
+    color: var(--bg-color); /* Texte sombre sur fond coloré */
+    box-shadow: 0 0 30px var(--accent); /* Glow intense */
+}
+
+/* Applique la couleur d'accent aux tags techniques */
+.tech-tag {
+    border-color: var(--border-color);
 }
