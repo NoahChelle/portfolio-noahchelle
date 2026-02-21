@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goblin Attack - Portfolio Noah Chelle</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-goblin">
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="nav-link" data-translate="nav.home">Accueil</a></li>
+            <li><a href="../projects.html" class="nav-link" data-translate="nav.projects">Projets</a></li>
+            <li><a href="../skills.html" class="nav-link" data-translate="nav.skills">Compétences & Expériences</a></li>
+            <li><a href="../contact.html" class="nav-link" data-translate="nav.contact">Contact</a></li>
+            <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+            <li><a href="../docs/CV_Noah_Chelle_FR.pdf" class="cv-btn" data-translate="nav.downloadCV" download>Télécharger CV</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="../projects.html" class="back-btn" data-translate="projects.back">← Retour aux projets</a>
+
+        <div class="project-detail active">
+            <div class="detail-header">
+                <h2 class="detail-title" data-translate="projects.goblinAttack">Goblin Attack</h2>
+            </div>
+
+            <div class="detail-content">
+                <div class="detail-left">
+                    <div class="detail-section">
+                        <h3 data-translate="projects.about">À propos du projet</h3>
+                        <p class="detail-description" data-translate="goblin.description">
+Conception d'un jeu type Vampire Survivors articulé autour de collecte de données en temps réel. En binôme, j'ai assuré le Game Design et le développement Unity, tout en concevant l'architecture de la base de données. J'ai développé un Dashboard dédié permettant d'analyser les métriques de jeu (comportement joueur, équilibrage des vagues). Ce projet démontre ma capacité à lier expérience utilisateur et analyse de données pour optimiser le pilotage d'une production vidéoludique                        </p>
+                    </div>
+
+                    <div class="detail-section">
+                        <div class="tech-tags">
+                            <!-- À REMPLIR : Ajoute ici tes outils/technos -->
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Base de données</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Data Analyse</span>
+                            <span class="tech-tag">Game Design</span>
+                            <span class="tech-tag">Level Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-right">
+                    <div class="media-gallery">
+                        <!-- IMAGE PRINCIPALE : Remplace le src par ton image -->
+                        <img src="../images/goblinattack/goblinattack_minia.png" alt="Goblin Attack - Image principale">
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERIE SECONDAIRE : Ajoute / supprime des blocs selon tes besoins -->
+            <div class="secondary-gallery">
+                <div class="secondary-images">
+                    <div class="secondary-image-item">
+                        <img src="../images/goblinattack/goblinattack_game.png" alt="Goblin Attack - Screenshot 1">
+                    </div>
+                    <div class="secondary-image-item">
+                        <img src="../images/goblinattack/goblinattack_game2.png" alt="Goblin Attack - Screenshot 2">
+                    </div>
+                    <div class="secondary-image-item">
+                        <img src="../images/goblinattack/goblinattack_game3.png" alt="Goblin Attack - Screenshot 3">
+                    </div>
+                    <div class="secondary-image-item">
+                        <img src="../images/goblinattack/goblinattack_data.png" alt="Goblin Attack - Screenshot 4">
+                    </div>
+                                        <div class="secondary-image-item">
+                        <img src="../images/goblinattack/goblinattack_data2.png" alt="Goblin Attack - Screenshot 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-actions">
+                <a href="https://leaneprd.itch.io/goblin-attack" target="_blank" class="btn btn-demo">Voir le projet</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-lightbox" id="project-lightbox">
+        <div class="project-lightbox-content">
+            <button class="project-lightbox-close" id="project-lightbox-close">&times;</button>
+            <img id="project-lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/projects.js"></script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Noah Chelle - <span data-translate="footer.legal">Portfolio personnel. Tous droits réservés.</span></p>
+        </div>
+    </footer>
+</body>
+</html>
