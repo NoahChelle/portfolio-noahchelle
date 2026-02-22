@@ -71,11 +71,11 @@ const translations = {
         "skills.baccalaureate": "Baccalauréat Général",
         "skills.baccalaureateDesc": "Spécialités Mathématiques, Anglais Monde Contemporain et Numérique Sciences Informatiques",
         "skills.but": "BUT Métiers du Multimédia et de l'Internet",
-        "skills.butDesc": "Parcours Développement Web et dispositifs Intéractifs",
+        "skills.butDesc": "Parcours Dispositif Intéractif et Web",
         "skills.creasign": "Stage chez Créasign",
-        "skills.creasignDesc": "Stage de 4 semaines - Tâches diverses (floquage, pose autocollants…) - Graphisme pour les clients",
+        "skills.creasignDesc": "Fabricants d’enseignes, adhésifs, textile, imprimerie et objets publicitaires - Stage de 4 semaines - Tâches diverses (floquage, pose autocollants…) - Graphisme pour les clients",
         "skills.pyrenees": "Stage chez Pyrénées Presse",
-        "skills.pyreneesDesc": "Stage de 8 semaines - Création de visuels images et vidéos pour les réseaux sociaux et les médias",
+        "skills.pyreneesDesc": "Presse régionale - Stage de 8 semaines - Création de visuels images et vidéos pour les réseaux sociaux et les médias",
         "skills.gfi": "Stage chez GFI",
         "skills.gfiDesc": "Stage d'observation d'une semaine - Observation du fonctionnement de l'entreprise",
 
@@ -131,11 +131,9 @@ const translations = {
         "goblin.description": "Conception d'un jeu type Vampire Survivors articulé autour de collecte de données en temps réel. En binôme, j'ai assuré le Game Design et le développement Unity, tout en concevant l'architecture de la base de données. J'ai développé un Dashboard dédié permettant d'analyser les métriques de jeu (comportement joueur, équilibrage des vagues). Ce projet démontre ma capacité à lier expérience utilisateur et analyse de données pour optimiser le pilotage d'une production vidéoludique.",
 
         // Projet La Maison de l'Horloger
-        "horloger.description": "Expérience immersive en Réalité Virtuelle réalisée avec un Méta Oculus Quest 2 en deux semaines sur la thématique des 'Espaces Impossibles'. Incarnez un Horloger gardien de l'espace et du temps vivant seul dans sa maison. Les engrenages de la Grande Horloge ayant disparus, l'équilibre est rompu ce qui créé des distorsions de l'espace et du temps. Dans ce projet réalisé à deux, notre approche a été de jouer avec ses déformations spatiales et temporelles afin de créer différentes énigmes. Je me suis chargé de la conception du Game Design et du Level Design et de l'intégration des mécaniques de jeu sur Unity.",
-
+"horloger.description": "Expérience immersive en Réalité Virtuelle réalisée avec un Méta Oculus Quest 2 en deux semaines sur la thématique des 'Espaces Impossibles'. Incarnez un Horloger gardien de l'espace et du temps vivant seul dans sa maison. Les engrenages de la Grande Horloge ayant disparus, l'équilibre est rompu ce qui créé des distorsions de l'espace et du temps. Dans ce projet réalisé à deux, notre approche a été de jouer avec ses déformations spatiales et temporelles afin de créer différentes énigmes. Je me suis chargé de la conception du Game Design et du Level Design et de l'intégration des mécaniques de jeu sur Unity. Nous avons aussi conçu un Game Design Document expliquant toutes nos intentions.",
         // Projet Solaryth : Kanoko
-        "solaryth.description": "Fable poétique Solarpunk explorant les synergies entre nature et technologie à travers différents dispositifs : un Walking Simulator (Jeu Unity en 3D) et un BookNook connecté (diorama physique). Inspiré par l'animisme de Miyazaki, le projet met en scène des esprits tutélaires, les Esperits. Au sein de ce projet, je me suis occupé de l'aspect interactif du BookNook (programmation IoT) en implémentant des capteurs de mouvement et un potentiomètre pour gérer l'éclairage et la pulsation lumineuse. De plus, j'ai soutenu les autres acteurs du projet en concevant le Narrative Design et en contribuant à la conception de l'UI du jeu vidéo.",
-        
+"solaryth.description": "Fable poétique Solarpunk explorant les synergies entre nature et technologie à travers différents dispositifs : un Walking Simulator (Jeu Unity en 3D) et un BookNook connecté (diorama physique). Inspiré par l'esthétique de Miyazaki, le projet met en scène des esprits tutélaires, les Esperits. Au sein de ce projet, je me suis occupé de l'aspect interactif du BookNook (programmation IoT) en implémentant des capteurs de mouvement et un potentiomètre pour gérer l'éclairage et la pulsation lumineuse. De plus, j'ai soutenu les autres acteurs du projet en concevant le Narrative Design et en contribuant à la conception de l'UI du jeu vidéo. J'ai réalisé le chara design d'un des personnages de l'histoire en suivant un processus précis avant de l'intégrer dans le jeu : moodboard et concept-art (Milanote), modélisation 3D et texturage (Blender), animation (Mixamo). Mon intention était d'incarner la sagesse et la bienveillance représentée par une tortue. J'ai ensuite ajouté l'esthétique solarpunk mêlant des éléments organiques (mousse, champignon) et technologiques (carapace photovoltaïque). Son design circulaire renforce son aspect calme et inoffensif.",        
         // Galerie Graphique
         "gallery.title": "🎨 Galerie Créations Graphiques",
         "gallery.subtitle": "Collection de mes designs, illustrations et créations visuelles",
@@ -208,11 +206,11 @@ const translations = {
         "skills.baccalaureate": "General Baccalaureate",
         "skills.baccalaureateDesc": "Specialties: Mathematics, Contemporary English World and Digital Computer Science",
         "skills.but": "BUT in Multimedia and Internet Professions",
-        "skills.butDesc": "Web Development and Interactive Devices track",
+        "skills.butDesc": "Interactive Devices and Web",
         "skills.creasign": "Internship at Créasign",
-        "skills.creasignDesc": "4-week internship - Various tasks (flocking, sticker application...) - Graphic design for clients",
+        "skills.creasignDesc": "Signage, adhesives, textiles, printing and promotional items manufacturer - 4-week internship - Various tasks (flocking, sticker application...) - Graphic design for clients",
         "skills.pyrenees": "Internship at Pyrénées Presse",
-        "skills.pyreneesDesc": "8-week internship - Creation of visuals (images and videos) for social media and media",
+        "skills.pyreneesDesc": "Regional press - 8-week internship - Creation of visuals (images and videos) for social media and media",
         "skills.gfi": "Internship at GFI",
         "skills.gfiDesc": "1-week observation internship - Understanding company operations",
 
@@ -268,11 +266,9 @@ const translations = {
         "goblin.description": "Design of a Survivors-like game focused on real-time data collection. I handled the Game Design, Unity development, and database architecture. I developed a dedicated Dashboard to analyze game metrics (player behavior, wave balancing) to optimize game production through data analysis.",
 
         // Projet La Maison de l'Horloger
-        "horloger.description": "Immersive Virtual Reality experience created with a Meta Oculus Quest 2 in two weeks on the theme of 'Impossible Spaces'. Play as a Watchmaker guardian of space and time. When the gears of the Great Clock disappear, distortions appear. Our approach was to use these spatial and temporal deformations to create puzzles. I was responsible for Game and Level Design and integrating mechanics in Unity.",
-
+"horloger.description": "Immersive Virtual Reality experience created with a Meta Oculus Quest 2 in two weeks on the theme of 'Impossible Spaces'. Play as a Watchmaker guardian of space and time living alone in his house. When the gears of the Great Clock disappear, the balance is broken, creating distortions of space and time. In this duo project, our approach was to play with these spatial and temporal deformations to create various puzzles. I was responsible for the Game Design, Level Design, and the integration of game mechanics in Unity. We also designed a Game Design Document explaining all our intentions.",
         // Projet Solaryth : Kanoko
-        "solaryth.description": "Solarpunk poetic fable exploring nature-technology synergies through a 3D Walking Simulator (Unity) and a connected BookNook (physical diorama). I handled the IoT interactive aspect of the BookNook, implementing motion sensors and light pulsations. I also contributed to the Narrative Design and UI design for the video game.",
-        
+"solaryth.description": "Solarpunk poetic fable exploring the synergies between nature and technology through different devices: a Walking Simulator (3D Unity game) and a connected BookNook (physical diorama). Inspired by Miyazaki's aesthetics, the project features tutelary spirits, the Esperits. Within this project, I handled the interactive aspect of the BookNook (IoT programming) by implementing motion sensors and a potentiometer to manage lighting and light pulses. Additionally, I supported other team members by designing the Narrative Design and contributing to the video game UI. I created the character design for one of the story's characters following a precise process before integrating it into the game: moodboard and concept art (Milanote), 3D modeling and texturing (Blender), animation (Mixamo). My intention was to embody wisdom and benevolence represented by a turtle. I then added the solarpunk aesthetic mixing organic elements (moss, mushrooms) and technology (photovoltaic shell). Its circular design reinforces its calm and harmless appearance.",        
         // Galerie Graphique
         "gallery.title": "🎨 Graphic Creations Gallery",
         "gallery.subtitle": "Collection of my designs, illustrations and visual creations",
