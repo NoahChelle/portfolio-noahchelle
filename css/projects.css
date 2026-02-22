@@ -1,17 +1,14 @@
 /* ========================================
-   PROJECTS CSS - VERSION STABLE FINALE
+   PROJECTS CSS - VERSION FINALE HARMONISÉE
    ======================================== */
 
-/* --- RESET & STRUCTURE --- */
 body {
     transition: background-color 0.8s ease, color 0.5s ease;
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    cursor: auto; /* Assure la visibilité du curseur par défaut */
 }
 
-/* On s'assure que la navbar reste au-dessus */
 nav { 
     z-index: 1000; 
     position: relative; 
@@ -20,7 +17,6 @@ nav {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Padding-top pour que le contenu commence SOUS la navbar */
     padding: 100px 40px 40px 40px; 
     box-sizing: border-box;
 }
@@ -35,7 +31,6 @@ nav {
 
 .project-card {
     display: grid;
-    /* Structure : Image (200px) | Texte (Flexible) | Bouton (180px) */
     grid-template-columns: 200px 1fr 180px; 
     gap: 3rem; 
     align-items: center;
@@ -53,13 +48,32 @@ nav {
     width: 200px; 
     height: 120px; 
     overflow: hidden; 
-    filter: grayscale(100%); 
 }
 
+/* Image en noir et blanc par défaut sur la grille */
 .project-image img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; /* Remplit le cadre sans déformer */
+    object-fit: cover;
+    filter: grayscale(100%); /* */
+    transition: filter 0.5s ease, transform 0.5s ease; /* Transition fluide */
+}
+
+/* Effet au survol de la CARTE : l'image retrouve sa couleur */
+.project-card:hover .project-image img { 
+    filter: grayscale(0%); /* */
+    transform: scale(1.05); 
+}
+
+.project-card .tech-tags {
+    margin: 10px 0;
+    gap: 5px;
+}
+
+.project-card .tech-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    opacity: 0.8;
 }
 
 .project-content h3 { 
@@ -69,34 +83,21 @@ nav {
     text-transform: uppercase; 
 }
 
-/* AJUSTEMENT : Écart vertical sous la description */
-.project-content p {
-    margin: 15px 0 0 0; /* Écart avec le titre */
-    padding-bottom: 15px; /* Écart vertical avec le bouton si le texte wrap */
-    color: var(--text-muted);
-    font-size: 1rem;
-    max-width: 85%; /* Évite que le texte ne colle au bouton horizontalement */
-    line-height: 1.4;
+.project-content p { 
+    margin: 10px 0; 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+    line-height: 1.4; 
 }
 
-/* Bouton Voir Plus (Liste) */
 .project-card .btn {
-    justify-self: end; /* Aligné à l'extrémité droite */
-    margin-top: 10px; 
+    justify-self: end;
     border: 1px solid var(--border-color);
     border-radius: 50px;
     padding: 12px 25px;
     font-size: 0.75rem;
     color: var(--text-main);
     transition: 0.3s;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.project-card:hover .btn { 
-    background: var(--accent); 
-    color: var(--bg-color); 
-    border-color: var(--accent); 
 }
 
 /* --- DÉTAILS DU PROJET (Pages individuelles) --- */
@@ -111,15 +112,20 @@ nav {
     padding-bottom: 1.5rem; 
 }
 
-/* Titre adaptatif pour éviter les débordements */
 .detail-title {
     font-size: clamp(1.8rem, 5vw, 3.5rem);
     color: var(--text-main);
     text-transform: uppercase;
-    margin: 0;
     font-weight: 700;
     line-height: 1.1;
-    word-wrap: break-word;
+    margin-bottom: 10px; /* */
+}
+
+/* Écart entre "À propos du projet" et les tags */
+.detail-section h3 {
+    margin-bottom: 40px; /* */
+    color: var(--text-main);
+    font-size: 1.4rem;
 }
 
 .detail-content {
@@ -130,13 +136,21 @@ nav {
     align-items: start;
 }
 
-/* Image principale non déformée */
-.media-gallery img, .media-gallery iframe {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid var(--border-color);
-    object-fit: contain; 
+.tech-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    margin-bottom: 25px; 
+}
+
+.tech-tag { 
+    border: 1px solid var(--border-color); 
+    padding: 8px 16px; 
+    font-size: 0.85rem; 
+    color: var(--text-main); 
+    background: rgba(255, 255, 255, 0.03);
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .detail-description { 
@@ -146,21 +160,32 @@ nav {
     font-size: 1.05rem; 
 }
 
-.tech-tags { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 8px; 
-    margin-top: 20px; 
+/* Format vidéo 16/9 préservé */
+.media-gallery iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* */
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
 }
 
-.tech-tag { 
-    border: 1px solid var(--border-color); 
-    padding: 4px 10px; 
-    font-size: 0.7rem; 
-    color: var(--text-main); 
+.media-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
 }
 
-/* --- GALERIE SECONDAIRE (Stabilisée) --- */
+/* --- MODÈLE 3D --- */
+model-viewer {
+    width: 100%;
+    height: 450px; 
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    outline: none;
+}
+
+/* --- GALERIE SECONDAIRE --- */
 .secondary-gallery {
     margin-top: 4rem;
     border-top: 1px solid var(--border-color);
@@ -174,7 +199,7 @@ nav {
 }
 
 .secondary-image-item {
-    aspect-ratio: 16 / 9; /* Format uniforme paysage */
+    aspect-ratio: 16 / 9;
     border: 1px solid var(--border-color);
     overflow: hidden;
     cursor: pointer;
@@ -184,16 +209,16 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
+    filter: grayscale(100%); /* */
     transition: 0.5s ease;
 }
 
 .secondary-image-item:hover img { 
-    filter: grayscale(0%); 
+    filter: grayscale(0%); /* */
     transform: scale(1.05); 
 }
 
-/* --- ACTIONS (Bouton Itch.io) --- */
+/* --- ACTIONS ET THÈMES --- */
 .detail-actions {
     width: 100%;
     display: flex;
@@ -216,10 +241,19 @@ nav {
 .btn-demo:hover { 
     background: var(--accent); 
     color: var(--bg-color); 
-    box-shadow: 0 0 20px var(--accent); 
 }
 
-/* --- LIGHTBOX (Correction Curseur & Croix) --- */
+/* Couleurs des thèmes */
+.theme-proton { --bg-color: #0a0112; --accent: #bd00ff; --text-main: #f0e6ff; --border-color: rgba(189, 0, 255, 0.3); }
+.theme-mario { --bg-color: #0f0202; --accent: #ff3333; --text-main: #fff0f0; --border-color: rgba(255, 51, 51, 0.3); }
+.theme-banana { --bg-color: #1a1500; --accent: #ffcc00; --text-main: #fffae0; --border-color: rgba(255, 204, 0, 0.3); }
+.theme-dance { --bg-color: #02021a; --accent: #00d4ff; --text-main: #ffffff; --border-color: rgba(0, 212, 255, 0.4); }
+.theme-bigbag { --bg-color: #0a0a0a; --accent: #ff0099; --text-main: #ffffff; --border-color: rgba(255, 0, 153, 0.4); }
+.theme-goblin { --bg-color: #060d06; --accent: #4caf50; --text-main: #e8f5e9; --border-color: rgba(76, 175, 80, 0.3); }
+.theme-horloger { --bg-color: #0e0a04; --accent: #c8972a; --text-main: #fdf3e3; --border-color: rgba(200, 151, 42, 0.3); }
+.theme-solaryth { --bg-color: #04060f; --accent: #f5a623; --text-main: #fff8ec; --border-color: rgba(245, 166, 35, 0.3); }
+
+/* --- LIGHTBOX --- */
 .project-lightbox {
     position: fixed; 
     inset: 0; 
@@ -228,87 +262,46 @@ nav {
     justify-content: center; 
     align-items: center; 
     z-index: 10001;
-    cursor: default !important; /* Force la visibilité du curseur */
+    cursor: default !important;
 }
 
-.project-lightbox.active { display: flex; }
+.project-lightbox.active { 
+    display: flex; 
+}
 
 .project-lightbox-content { 
     position: relative; 
-    max-width: 90%; 
-    max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; 
+    height: 90%;
 }
 
 .project-lightbox img { 
-    width: auto; 
-    max-width: 100%; 
-    max-height: 80vh; 
-    object-fit: contain; 
+    max-width: 100%; /* */
+    max-height: 85vh; /* */
+    object-fit: contain; /* */
     border: 1px solid #333;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 .project-lightbox-close {
     position: absolute; 
-    top: -60px; /* Croix bien au-dessus de l'image */
+    top: -50px; 
     right: 0;
     background: none; 
     border: none; 
     color: white; 
-    font-size: 3.5rem; 
+    font-size: 3rem; 
     cursor: pointer !important;
 }
 
-/* --- THÈMES --- */
-.theme-proton { --bg-color: #0a0112; --accent: #bd00ff; --text-main: #f0e6ff; --border-color: rgba(189, 0, 255, 0.3); }
-.theme-mario { --bg-color: #0f0202; --accent: #ff3333; --text-main: #fff0f0; --border-color: rgba(255, 51, 51, 0.3); }
-.theme-balmo { --bg-color: #031412; --accent: #4fffd9; --text-main: #e0fffa; --border-color: rgba(79, 255, 217, 0.2); }
-.theme-banana { --bg-color: #1a1500; --accent: #ffcc00; --text-main: #fffae0; --border-color: rgba(255, 204, 0, 0.3); }
-.theme-dance { --bg-color: #02021a; --accent: #00d4ff; --text-main: #ffffff; --border-color: rgba(0, 212, 255, 0.4); }
-.theme-bigbag { --bg-color: #0a0a0a; --accent: #ff0099; --text-main: #ffffff; --border-color: rgba(255, 0, 153, 0.4); }
-/* Nouveaux thèmes — Personnalise les couleurs à ta guise */
-.theme-goblin { --bg-color: #060d06; --accent: #4caf50; --text-main: #e8f5e9; --border-color: rgba(76, 175, 80, 0.3); }
-.theme-horloger { --bg-color: #0e0a04; --accent: #c8972a; --text-main: #fdf3e3; --border-color: rgba(200, 151, 42, 0.3); }
-.theme-solaryth { --bg-color: #04060f; --accent: #f5a623; --text-main: #fff8ec; --border-color: rgba(245, 166, 35, 0.3); }
-
 @keyframes fadeIn { to { opacity: 1; } }
 
-/* Mobile */
 @media (max-width: 1024px) {
-    .container { padding: 80px 20px 20px 20px; }
     .project-card { 
         grid-template-columns: 1fr; 
         text-align: center; 
-        gap: 2rem; 
-    }
-    .project-image { margin: 0 auto; }
-    .project-content p { max-width: 100%; margin-bottom: 25px; }
-}
-
-/* --- OPTIMISATION MODÈLE 3D --- */
-model-viewer {
-    width: 100%;
-    /* On garde une hauteur cohérente avec tes visuels actuels */
-    height: 450px; 
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    display: block;
-    /* Supprime le contour bleu au clic */
-    outline: none; 
-    /* Définit la couleur du symbole de chargement (utilise ton accent) */
-    --progress-bar-color: var(--accent);
-    --poster-color: transparent;
-}
-
-/* On s'assure que le poster (l'image d'attente) couvre bien toute la zone */
-model-viewer::part(poster) {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Adaptation Mobile */
-@media (max-width: 768px) {
-    model-viewer {
-        height: 300px;
     }
 }

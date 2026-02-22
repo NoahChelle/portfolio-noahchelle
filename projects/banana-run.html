@@ -7,44 +7,31 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="theme-banana">
-        <nav>
+    <nav>
         <ul>
             <li><a href="../index.html" class="nav-link" data-translate="nav.home">Accueil</a></li>
             <li><a href="../projects.html" class="nav-link" data-translate="nav.projects">Projets</a></li>
             <li><a href="../skills.html" class="nav-link" data-translate="nav.skills">Compétences & Expériences</a></li>
             <li><a href="../contact.html" class="nav-link" data-translate="nav.contact">Contact</a></li>
             <li><button id="lang-toggle" class="lang-btn">EN</button></li>
-            <li><a href="docs/CV_Noah_Chelle_FR.pdf" class="cv-btn" data-translate="nav.downloadCV" download>Télécharger CV</a></li>        </ul>
+            <li><a href="docs/CV_Noah_Chelle_FR.pdf" class="cv-btn" data-translate="nav.downloadCV" download>Télécharger CV</a></li>
+        </ul>
     </nav>
 
     <div class="container">
         <a href="../projects.html" class="back-btn" data-translate="projects.back">← Retour aux projets</a>
-        
         <div class="project-detail active">
-            <div class="detail-header">
+            <header class="detail-header">
                 <h2 class="detail-title" data-translate="projects.bananaRun">Banana Run</h2>
-            </div>
-            
+            </header>
             <div class="detail-content">
                 <div class="detail-left">
                     <div class="detail-section">
                         <h3 data-translate="projects.about">À propos du projet</h3>
-                        <p class="detail-description" data-translate="banana.description">
-                            Banana Run est un jeu de société créé dans le cadre d'un projet universitaire. 
-                            En équipe de 3 personnes, nous avons conçu un jeu de plateau complet avec un univers original 
-                            centré sur des singes collectionneurs de bananes. Le jeu combine stratégie, chance et interaction 
-                            entre les joueurs avec des mécaniques de collection, d'échange et de sabotage.
-                        </p>
-
-                        <p class="detail-description" data-translate="banana.description2">
-Incarnez un ouistiti recruté par le Chef Gorille et ramenez lui un maximum de bananes disséminées dans la jungle sans tomber dans les pièges de vos adversaires ouistitis ! L’histoire de notre jeu se place dans la jungle faisant face depuis quelque temps à une pénurie : les bananes y deviennent rares.                         </p>
-                    </div>
-                    
-                    <div class="detail-section">
                         <div class="tech-tags">
                             <span class="tech-tag">Game Design</span>
                             <span class="tech-tag">Narrative Design</span>
@@ -53,47 +40,36 @@ Incarnez un ouistiti recruté par le Chef Gorille et ramenez lui un maximum de b
                             <span class="tech-tag">Prototypage</span>
                             <span class="tech-tag">3D Printing</span>
                         </div>
+                        <p class="detail-description" data-translate="banana.description">
+                            Banana Run est un jeu de société créé dans le cadre d'un projet universitaire.
+                        </p>
+                        <p class="detail-description" data-translate="banana.description2">
+                            Incarnez un ouistiti recruté par le Chef Gorille et ramenez lui un maximum de bananes disséminées dans la jungle!
+                        </p>
                     </div>
                 </div>
-                
                 <div class="detail-right">
                     <div class="media-gallery">
                         <img src="../images/bananarun.png" alt="Banana Run - Plateau de jeu">
                     </div>
                 </div>
             </div>
-
-            <!-- Galerie d'images secondaires -->
             <div class="secondary-gallery">
                 <div class="secondary-images">
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun1.jpg" alt="Banana Run - Détail des cartes">
-                    </div>
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun2.jpg" alt="Banana Run - Pions de jeu">
-                    </div>
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun3.jpg" alt="Banana Run - Pions de jeu">
-                    </div>
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun4.png" alt="Banana Run - Image 4">
-                    </div>
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun5.png" alt="Banana Run - Image 5">
-                    </div>
-                    <div class="secondary-image-item">
-                        <img src="../images/bananarun/bananarun6.png" alt="Banana Run - Image 6">
-                    </div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun1.jpg" alt="Banana Run 1"></div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun2.jpg" alt="Banana Run 2"></div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun3.jpg" alt="Banana Run 3"></div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun4.png" alt="Banana Run 4"></div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun5.png" alt="Banana Run 5"></div>
+                    <div class="secondary-image-item"><img src="../images/bananarun/bananarun6.png" alt="Banana Run 6"></div>
                 </div>
             </div>
-
             <div class="detail-actions">
                 <a href="https://ninons.itch.io/banane-run" target="_blank" class="btn btn-demo" data-translate="projects.play">Voir sur Itch.io</a>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox pour les images -->
     <div class="project-lightbox" id="project-lightbox">
         <div class="project-lightbox-content">
             <button class="project-lightbox-close" id="project-lightbox-close">&times;</button>
@@ -105,8 +81,6 @@ Incarnez un ouistiti recruté par le Chef Gorille et ramenez lui un maximum de b
     <script src="../js/language.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/projects.js"></script>
-
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <p>&copy; 2025 Noah Chelle - <span data-translate="footer.legal">Portfolio personnel. Tous droits réservés.</span></p>
