@@ -13,7 +13,7 @@
     /* PALETTE DE COULEURS (Monochrome + Accent Acide) */
     --bg-color: #080808;       /* Noir profond, mat */
     --text-main: #EAEAEA;      /* Blanc cassé */
-    --text-muted: #888888;     /* Gris moyen */
+    --text-muted: #b0b0b0;     /* Gris clair */
     
     /* Accent : Un vert acide ou violet électrique très mode */
     --accent: #CCFF00;         /* Lime Acid (très tendance Behance) */
@@ -288,4 +288,12 @@ h1, h2, h3 {
 .page-transition-curtain.active .transition-text {
     transform: translateY(0);
     opacity: 1;
+}
+/* Curseur visible dans la lightbox */
+.project-lightbox,
+.project-lightbox *,
+.project-lightbox-content,
+.project-lightbox img,
+.project-lightbox-close {
+    cursor: default !important;
 }

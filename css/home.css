@@ -51,6 +51,18 @@
     align-items: center;
 }
 
+/* Bloc 3 : image petite à gauche, texte large à droite */
+.content-row.layout-image-left {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+/* Bloc 4 : texte large à gauche, bouton à droite */
+.content-row.layout-text-cta {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+
 /* Texte : Colonne étroite style journal */
 .text-block {
     font-size: 1.1rem;
@@ -93,6 +105,15 @@
     transform: scale(0.98); /* Léger recul */
 }
 
+/* Image personnage */
+.character-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Bouton aligné à droite */
 .cta-block {
     display: flex;
@@ -105,7 +126,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .content-row, .content-row.reverse {
+    .content-row, .content-row.reverse, .content-row.layout-image-left, .content-row.layout-text-cta {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
