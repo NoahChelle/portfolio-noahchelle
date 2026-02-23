@@ -157,7 +157,12 @@ nav {
     color: var(--text-muted); 
     line-height: 1.8; 
     text-align: justify; 
-    font-size: 1.05rem; 
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+
+.detail-description:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Format vidéo 16/9 préservé */
