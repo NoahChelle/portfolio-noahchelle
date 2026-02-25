@@ -143,7 +143,8 @@ const translations = {
         // Projet La Maison de l'Horloger
         "horloger.description_1": "Expérience immersive en Réalité Virtuelle réalisée avec un Méta Oculus Quest 2 en deux semaines sur la thématique des 'Espaces Impossibles'. Incarnez un Horloger gardien de l'espace et du temps vivant seul dans sa maison. Les engrenages de la Grande Horloge ayant disparus, l'équilibre est rompu ce qui créé des distorsions de l'espace et du temps.",
         "horloger.description_2": "Dans ce projet réalisé à deux, notre approche a été de jouer avec ses déformations spatiales et temporelles afin de créer différentes énigmes. Je me suis chargé de la conception du Game Design et du Level Design et de l'intégration des mécaniques de jeu sur Unity.",
-        "horloger.description_3": "Nous avons aussi conçu un Game Design Document expliquant toutes nos intentions. Je me suis aussi chargé de toute la dimention VFX du jeu.",
+        "horloger.description_3": "Nous avons aussi conçu un Game Design Document expliquant toutes nos intentions.                             Nous avons aussi conçu un Game Design Document expliquant toutes nos intentions. Lors de ce projet je me suis aussi initié aux effets visuels en m'occupant de la partie VFX.",
+
 
         // Projet Solaryth : Kanoko
         "solaryth.description1": "Fable poétique Solarpunk explorant les synergies entre nature et technologie à travers différents dispositifs : un Walking Simulator (Jeu Unity en 3D) et un BookNook connecté (diorama physique). Inspiré par l'esthétique de Miyazaki, le projet met en scène des esprits tutélaires, les Esperits.",

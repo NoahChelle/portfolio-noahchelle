@@ -1,4 +1,3 @@
-console.log('Portfolio chargé : Mode Artistique');
 
 // 1. Navigation Scrolled
 const nav = document.querySelector('nav');
@@ -95,13 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. On installe le rideau HTML (invisible au départ)
     const curtain = document.createElement('div');
     curtain.className = 'page-transition-curtain';
+    // Style de base pour assurer le centrage du texte injecté
+    curtain.style.display = 'flex';
+    curtain.style.justifyContent = 'center';
+    curtain.style.alignItems = 'center';
+    
     curtain.innerHTML = '<h1 class="transition-text"></h1>';
     document.body.appendChild(curtain);
     
     const textEl = curtain.querySelector('.transition-text');
+    // Forcer le centrage du texte à l'intérieur de la balise H1
+    textEl.style.textAlign = 'center';
+    textEl.style.width = '90%';
+    textEl.style.margin = '0 auto';
 
     // 2. CIBLAGE PRÉCIS : On ne prend que les liens DANS la grille de projets
-    // Cela exclut la navbar, le footer et le bouton retour
     const projectLinks = document.querySelectorAll('.project-card a');
 
     projectLinks.forEach(link => {
@@ -109,26 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = this.getAttribute('href');
             const target = this.getAttribute('target');
             
-            // Vérifications de sécurité (lien valide, pas un mail, pas un onglet externe)
             if (href && !href.startsWith('#') && !href.includes('mailto') && target !== '_blank') {
                 
-                e.preventDefault(); // On empêche le chargement immédiat
+                e.preventDefault(); 
                 
-                // On récupère le titre du projet pour l'afficher
                 let title = "PROJET";
                 const card = this.closest('.project-card');
                 
                 if (card) {
-                    // On essaie de trouver le titre H3 dans la carte
                     const h3 = card.querySelector('h3');
-                    if (h3) title = h3.innerText;
+                    if (h3) {
+                        title = h3.innerText;
+                        
+                        // Ajustement de la taille selon la longueur pour éviter le débordement
+                        if (title.length > 15) {
+                            textEl.style.fontSize = "6vw"; 
+                            textEl.style.whiteSpace = "normal"; 
+                        } else {
+                            textEl.style.fontSize = "8vw"; 
+                            textEl.style.whiteSpace = "nowrap";
+                        }
+                    }
                 }
 
                 // On lance l'animation
                 textEl.innerText = title;
                 curtain.classList.add('active');
 
-                // On change de page après 800ms (le temps que le rideau monte)
+                // On change de page après 800ms
                 setTimeout(() => {
                     window.location.href = href;
                 }, 800);
