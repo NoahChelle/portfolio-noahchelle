@@ -134,7 +134,7 @@ const translations = {
         // Projet Big Bag Festival
         "bigbag.description_1": "Conception d'une affiche interactive pour le Big Bag Festival, un événement musical et artistique. Le projet repose sur l'intégration d'un QR Code dans une affiche au design minimaliste et vectoriel réalisé sous Illustrator.",
         "bigbag.description_2": "Lorsque l'utilisateur scanne le QR Code, il déclenche une animation dynamique (réalisée avec JavaScript) qui donne vie aux éléments graphiques de l'affiche, combinant ainsi le design print traditionnel avec une expérience digitale moderne.",
-
+        "bigbag.description_3": "Mon rôle dans ce projet a été de définir la composition et la hiérarchie de l'affiche, puis les animations et interactions après scan du QR Code. Je me suis entièrement chargé d'animer l'affiche en javascript à l'aide de p5js. Notre objectif avec ce visuel et ces animations était de transmettre un message fort d'unité, montrant que la musique nous rassemble.",
         // Projet Goblin Attack
         "goblin.description_1": "Conception d'un jeu type Vampire Survivors articulé autour de collecte de données en temps réel. En binôme, je me suis chargé de l'aspect Game Design et le développement Unity, ainsi que de la partie dashboard et base de données.",
         "goblin.description_2": "Le dashboard permet d'analyser les métriques de jeu (comportement joueur, équilibrage des vagues). Ce projet a ensuite été installé lors des Journées Portes Ouvertes 2026 afin que les visiteurs puissent le tester.",
@@ -286,8 +286,8 @@ const translations = {
         
         // Projet Big Bag Festival
         "bigbag.description_1": "Design of an interactive poster for the Big Bag Festival. The project integrates a QR Code into a minimalist vector poster created in Illustrator.",
-        "bigbag.description_2": "Scanning the QR Code triggers a dynamic JavaScript animation that brings the graphic elements to life, merging traditional print design with a modern digital experience.",
-
+        "bigbag.description_2": "Scanning the QR Code triggers a dynamic JavaScript animation that brings the graphic elements to life, merging traditional print design with a modern interactive experience.",
+        "bigbag.description_3":"My role in this project was to define the composition and hierarchy of the poster, as well as the animations and interactions triggered after scanning the QR Code. I was entirely responsible for animating the poster in JavaScript using p5.js. Our goal with this visual and these animations was to convey a strong message of unity, showing that music brings us together.",
         // Projet Goblin Attack
         "goblin.description_1": "Design of a Survivors-like game focused on real-time data collection. In a duo, I handled the Game Design, Unity development, and the database and dashboard parts.",
         "goblin.description_2": "The dashboard analyzes game metrics (player behavior, wave balancing). The project was showcased at the 2026 Open House Days so visitors could test it.",

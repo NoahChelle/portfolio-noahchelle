@@ -349,3 +349,8 @@ model-viewer {
         text-align: center; 
     }
 }
+
+.theme-bigbag .media-gallery img {
+    max-width: 65%; /* Taille encore plus réduite pour l'affiche verticale */
+    margin: 0 auto;
+}
