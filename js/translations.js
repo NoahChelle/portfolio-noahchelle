@@ -115,12 +115,12 @@ const translations = {
 
         // Projet Mario Kart
         "mariokart.description_1": "Le but de ce projet de groupe était de créer un teaser de jeu vidéo en utilisant la motion capture. Inspiré par les publicités iPod de 2005, le projet devait mettre en scène des personnages en silhouettes noires avec des éléments clés mis en valeur par des couleurs vives. De plus la musique de fond devait être un assemblage de plusieurs musiques à partir d'une bibliothèque qui nous a été transmise.",
-        "mariokart.description_2": "Dans ce projet, mon rôle a été de paramétrer et enregistrer les mouvement de motion capture à l'aide de Rokoko Studio, de réaliser la musique de fond.",
+        "mariokart.description_2": "Dans ce projet, mon rôle a été de paramétrer et enregistrer les mouvement de motion capture à l'aide de Rokoko Studio et de réaliser la musique de fond.",
         "mariokart.description_3": "Une fois que les scènes ont été correctement intégrées et assemblées sur Blender, je me suis occupé du motion design sur After Effect et de l'assemblage de la vidéo finale.",
         
         // Projet Proton Neutron
         "proton.description_1": "Conception d'un jeu vidéo type Zelda-Like. L'exercice était de concevoir un jeu vidéo sur le thème \"10+\" et en respectant quelques contraintes. Le jeu devait être en pixel art et intégrer une mécanique pour que le joueur puisse poser des messages et qu'ils soient stockés dans une base de données (de la même manière que dans Dark Souls).",
-        "proton.description_2": "Ce travail s'est réalisé en binôme et m'a permis d'être présent sur tous les secteurs de la réalisation d'un jeu vidéo. En premier temps au niveau de la conception(game design, narration design et level design.",
+        "proton.description_2": "Ce travail s'est réalisé en binôme et m'a permis d'être présent sur tous les secteurs de la réalisation d'un jeu vidéo. En premier temps au niveau de la conception game design, narration design et level design.",
         "proton.description_3": "Mais aussi sur toute la partie pixel art, développement du jeu, base de données et assets graphiques. Cet exercice m'a donné une expérience de réalisation de jeu vidéo de A à Z.",
         
         // Projet Pokémon (Fantômaki)
@@ -147,9 +147,9 @@ const translations = {
 
 
         // Projet Solaryth : Kanoko
-        "solaryth.description1": "Fable poétique Solarpunk explorant les synergies entre nature et technologie à travers différents dispositifs : un Walking Simulator (Jeu Unity en 3D) et un BookNook connecté (diorama physique). Inspiré par l'esthétique de Miyazaki, le projet met en scène des esprits tutélaires, les Esperits.",
+        "solaryth.description1": "Fable poétique Solarpunk explorant les synergies entre nature et technologie à travers différents dispositifs : un Walking Simulator (Jeu Unity en 3D) et un BookNook connecté (diorama physique). Inspiré par l'esthétique de Miyazaki, le projet met en scène des esprits de la nature : les Esperits.",
         "solaryth.description2": "Au sein de ce projet, je me suis occupé de l'aspect interactif du BookNook (programmation IoT) en implémentant des capteurs de mouvement et un potentiomètre pour gérer l'éclairage et la pulsation lumineuse. De plus, j'ai soutenu les autres acteurs du projet en concevant le Narrative Design et en contribuant à la conception de l'UI du jeu vidéo.",
-        "solaryth.description3": "J'ai réalisé le chara design d'un des personnages de l'histoire en suivant un processus précis avant de l'intégrer dans le jeu : moodboard et concept-art (Milanote), modélisation 3D et texturage (Blender), animation (Mixamo). Mon intention était d'incarner la sagesse et la bienveillance représentée par une tortue. J'ai ensuite ajouté l'esthétique solarpunk mêlant des éléments organiques (mousse, champignon) et technologiques (carapace photovoltaïque). Son design circulaire renforce son aspect calme et inoffensif.",        
+        "solaryth.description3": "J'ai réalisé le chara design d'un des Esperits de l'histoire en suivant un processus précis avant de l'intégrer dans le jeu : moodboard et concept-art (Milanote), modélisation 3D et texturage (Blender), animation (Mixamo). Mon intention était d'incarner la sagesse et la bienveillance représentée par une tortue. J'ai ensuite ajouté l'esthétique solarpunk mêlant des éléments organiques (mousse, champignon) et technologiques (carapace photovoltaïque). Son design circulaire renforce son aspect calme et inoffensif.",        
         
         // Galerie Graphique
         "gallery.title": "🎨 Galerie Créations Graphiques",
@@ -273,7 +273,7 @@ const translations = {
         
         // Projet Proton Neutron
         "proton.description_1": "Design of a Zelda-like video game. The exercise was to design a video game on the theme \"10+\" while respecting several constraints. The game had to be in pixel art and integrate a mechanic allowing players to leave messages stored in a database (similar to Dark Souls).",
-        "proton.description_2": "This pair project allowed me to be involved in all sectors of video game creation. Initially in terms of design (game design, narrative design, and level design).",
+        "proton.description_2": "This pair project allowed me to be involved in all sectors of video game creation. Initially in terms of design game design, narrative design, and level design.",
         "proton.description_3": "But also regarding all the pixel art, game development, database management, and graphic assets. This exercise gave me experience in creating a video game from A to Z.",
         
         // Projet Pokémon (Fantômaki)
@@ -299,9 +299,9 @@ const translations = {
         "horloger.description_3": "We also designed a Game Design Document explaining our intentions. I was also responsible for the entire VFX dimension of the game.",
 
         // Projet Solaryth : Kanoko
-        "solaryth.description1": "A Solarpunk poetic fable exploring the synergies between nature and technology through different devices: a Walking Simulator (3D Unity game) and a connected BookNook (physical diorama). Inspired by Miyazaki's aesthetics, the project features tutelary spirits called the Esperits.",
+        "solaryth.description1": "A Solarpunk poetic fable exploring the synergies between nature and technology through different devices: a Walking Simulator (3D Unity game) and a connected BookNook (physical diorama). Inspired by Miyazaki's aesthetics, the project features  spirits called the Esperits.",
         "solaryth.description2": "Within this project, I handled the interactive aspect of the BookNook (IoT programming) by implementing motion sensors and a potentiometer to manage lighting and light pulses. Additionally, I supported other team members by designing the Narrative Design and contributing to the video game UI.",
-        "solaryth.description3": "I created the character design for one of the story's characters following a precise process before integrating it into the game: moodboard and concept art (Milanote), 3D modeling and texturing (Blender), animation (Mixamo). My intention was to embody wisdom and benevolence through a turtle. I then added the solarpunk aesthetic mixing organic elements (moss, mushrooms) and technology (photovoltaic shell). Its circular design reinforces its calm and harmless appearance.",        
+        "solaryth.description3": "I created the character design for one of the story's Esperits following a precise process before integrating it into the game: moodboard and concept art (Milanote), 3D modeling and texturing (Blender), animation (Mixamo). My intention was to embody wisdom and benevolence through a turtle. I then added the solarpunk aesthetic mixing organic elements (moss, mushrooms) and technology (photovoltaic shell). Its circular design reinforces its calm and harmless appearance.",        
         
         // Graphic Gallery
         "gallery.title": "🎨 Graphic Creations Gallery",
